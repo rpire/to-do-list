@@ -1,20 +1,25 @@
 import _ from 'lodash';
-import printMe from './print.js';
+import genHTML from './gen_html';
 import './style.css';
 
-function component() {
-  const element = document.createElement('div');
-  const btn = document.createElement('button');
+const listArr = [
+  {
+    description: 'wash the dishes',
+    completed: false,
+    index: 0,
+  },
+  {
+    description: 'walk the dog',
+    completed: false,
+    index: 0,
+  },
+  {
+    description: 'clean my room',
+    completed: false,
+    index: 0,
+  },
+];
 
-  element.innerHTML = _.join(['Hello', 'world!'], ' ');
-  element.classList.add('hello');
-   
-  btn.innerHTML = 'Click here to be greeted';
-  btn.onclick = printMe;
+let list = document.getElementById('list');
 
-  element.appendChild(btn);
-
-  return element;
-}
-
-document.body.appendChild(component());
+window.onload = genHTML(list, listArr);
