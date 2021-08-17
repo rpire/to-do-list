@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import genHTML from './gen_html';
 import './style.css';
 
@@ -20,6 +19,6 @@ const listArr = [
   },
 ];
 
-let list = document.getElementById('list');
+const list = document.getElementById('list');
 
 window.onload = genHTML(list, listArr);
