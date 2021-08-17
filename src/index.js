@@ -9,7 +9,7 @@ function component() {
   element.innerHTML = _.join(['Hello', 'world!'], ' ');
   element.classList.add('hello');
    
-  btn.innerHTML = 'Click here to be insulted aggressively';
+  btn.innerHTML = 'Click here to be greeted';
   btn.onclick = printMe;
 
   element.appendChild(btn);
