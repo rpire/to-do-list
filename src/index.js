@@ -34,16 +34,15 @@ const reload = () => {
     localStorage.setItem('toDoList', newStorage);
     list.innerHTML = '';
     genHTML(list, JSON.parse(newStorage));
-    console.log(localStorage.getItem('toDoList'));
   }
   const checkboxes = document.querySelectorAll('.checkbox');
   for (let i = 0; i < checkboxes.length; i += 1) {
     checkboxes[i].addEventListener('change', () => {
-      localStorage.setItem('toDoList', checkComplete(listArr));
+      const storage = checkComplete(listArr);
+      localStorage.setItem('toDoList', storage);
       reload();
     });
-  };
-}
+  }
+};
 
 window.onload = reload();
-
