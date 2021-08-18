@@ -5,11 +5,12 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
-    print: './src/print.js',
+    print: './src/gen_html.js',
   },
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
+    port: 3000,
   },
   plugins: [
     new HtmlWebpackPlugin({
