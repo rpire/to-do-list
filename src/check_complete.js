@@ -3,5 +3,5 @@ export default function checkComplete(arr) {
   for (let i = 0; i < arr.length; i += 1) {
     arr[i].completed = checkboxes[i].checked;
   }
-  return JSON.stringify(arr);
+  localStorage.setItem('toDoList', JSON.stringify(arr));
 }

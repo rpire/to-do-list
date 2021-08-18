@@ -37,8 +37,8 @@ const reload = () => {
   }
   const checkboxes = document.querySelectorAll('.checkbox');
   for (let i = 0; i < checkboxes.length; i += 1) {
-    checkboxes[i].addEventListener('change', function() {
-      localStorage.setItem('toDoList', checkComplete(listArr));
+    checkboxes[i].addEventListener('change', () => {
+      checkComplete(listArr);
       reload();
     });
   }
