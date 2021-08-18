@@ -16,14 +16,43 @@ main {
 }
 
 .heading {
+  margin-right: 5%;
   margin-left: 5%;
-  font-size: 18px;
+  font-size: 12px;
+}
+
+.heading h1 {
+  width: 70%;
+}
+
+i {
+  cursor: pointer;
+}
+
+.heading i {
+  font-size: 20px;
+  color: #aaa;
 }
 
 .add-container {
   border-top: 1px solid #aaa;
   width: 90%;
   padding: 10px 5%;
+}
+
+.add-container i {
+  color: #aaa;
+}
+
+.heading i:hover,
+.add-container i:hover {
+  color: black;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #add-item {
@@ -43,15 +72,44 @@ main {
 }
 
 #list li {
+  display:flex;
+  justify-content: space-between;
   border-top: 1px solid #aaa;
   padding: 10px 5%;
+}
+
+.description-container {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  margin-right: 0;
+}
+
+.checkbox {
+  margin-right: 15px;
+  margin-bottom: 0;
+}
+
+.item-icon {
+  color: #aaa;
+}
+
+.item-icon:hover {
+  color: black;
 }
 
 .list-foot {
   background-color: #e5e5e5;
   text-align: center;
-  border-top: #aaa;
+  color: gray;
+  border-top: 1px solid gray;
   width: 100%;
-  padding: 15px 0;
+  padding: 10px 0;
   margin-bottom: 0;
+  cursor: pointer;
+}
+
+.list-foot:hover {
+  background-color: gray;
+  color: black
 }
