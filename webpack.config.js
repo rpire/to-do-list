@@ -6,6 +6,7 @@ module.exports = {
   entry: {
     index: './src/index.js',
     print: './src/gen_html.js',
+    check: './src/check_complete.js'
   },
   devtool: 'inline-source-map',
   devServer: {
