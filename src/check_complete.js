@@ -1,9 +1,7 @@
-import { listArr } from "./index.js";
-
-export default function checkComplete() {
+export default function checkComplete(arr) {
   const checkboxes = document.querySelectorAll('.checkbox');
-  for (let i = 0; i < listArr.length; i += 1) {
-    listArr[i].completed = checkboxes[i].checked;
+  for (let i = 0; i < arr.length; i += 1) {
+    arr[i].completed = checkboxes[i].checked;
   }
-  localStorage.setItem('toDoList', JSON.stringify(listArr));
+  localStorage.setItem('toDoList', JSON.stringify(arr));
 }

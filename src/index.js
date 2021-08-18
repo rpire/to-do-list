@@ -1,8 +1,7 @@
 import genHTML from './gen_html';
-import checkComplete from './check_complete';
 import './style.css';
 
-export let listArr = [
+let listArr = [
   {
     description: 'wash the dishes',
     completed: false,
@@ -38,7 +37,6 @@ const reload = () => {
   const checkboxes = document.querySelectorAll('.checkbox');
   for (let i = 0; i < checkboxes.length; i += 1) {
     checkboxes[i].addEventListener('change', () => {
-      checkComplete();
       reload();
     });
   }
