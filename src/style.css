@@ -72,7 +72,7 @@ i {
 }
 
 #list li {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   border-top: 1px solid #aaa;
   padding: 10px 5%;
@@ -111,5 +111,5 @@ i {
 
 .list-foot:hover {
   background-color: gray;
-  color: black
+  color: black;
 }
