@@ -9,8 +9,12 @@ export default function genHTML(list, arr) {
     checkbox.type = 'checkbox';
     checkbox.id = `checkbox-${i}`;
     checkbox.classList.add('checkbox');
+    checkbox.checked = arr[i].completed;
     desc.htmlFor = `checkbox-${i}`;
     desc.innerHTML = arr[i].description;
+    if (checkbox.checked) {
+      desc.classList.add('done');
+    }
     itemIcon.classList.add('fas', 'fa-ellipsis-v', 'item-icon');
 
     descCont.appendChild(checkbox);

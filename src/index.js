@@ -1,7 +1,8 @@
 import genHTML from './gen_html';
+import checkComplete from './check_complete';
 import './style.css';
 
-const listArr = [
+let listArr = [
   {
     description: 'wash the dishes',
     completed: false,
@@ -21,4 +22,28 @@ const listArr = [
 
 const list = document.getElementById('list');
 
-window.onload = genHTML(list, listArr);
+const reload = () => {
+  if (localStorage.getItem('toDoList')) {
+    const oldStorage = localStorage.getItem('toDoList');
+    const newStorage = JSON.parse(oldStorage);
+    list.innerHTML = '';
+    listArr = newStorage;
+    genHTML(list, listArr);
+  } else {
+    const newStorage = JSON.stringify(listArr);
+    localStorage.setItem('toDoList', newStorage);
+    list.innerHTML = '';
+    genHTML(list, JSON.parse(newStorage));
+    console.log(localStorage.getItem('toDoList'));
+  }
+  const checkboxes = document.querySelectorAll('.checkbox');
+  for (let i = 0; i < checkboxes.length; i += 1) {
+    checkboxes[i].addEventListener('change', () => {
+      localStorage.setItem('toDoList', checkComplete(listArr));
+      reload();
+    });
+  };
+}
+
+window.onload = reload();
+

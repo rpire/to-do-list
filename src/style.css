@@ -49,6 +49,10 @@ i {
   color: black;
 }
 
+.done {
+  text-decoration: line-through;
+}
+
 .container {
   display: flex;
   justify-content: space-between;
