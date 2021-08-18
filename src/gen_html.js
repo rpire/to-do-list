@@ -1,4 +1,4 @@
-import checkComplete from "./check_complete";
+import checkComplete from './check_complete';
 
 export default function genHTML(list, arr) {
   for (let i = 0; i < arr.length; i += 1) {
