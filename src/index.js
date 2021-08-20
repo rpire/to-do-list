@@ -47,7 +47,7 @@ addNewBtn.addEventListener('click', () => {
     task.value = '';
     reload();
   } else {
-    alert('Tasks must contain text.\nTry typing something into the "Add to your list..." input');
+    alert('Tasks must contain text.\nTry typing something into the "Add to your list..." input.');
   }
 });
 
