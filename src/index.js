@@ -18,7 +18,7 @@ const reload = () => {
       {
         description: 'Add your first task',
         completed: false,
-        index: 0,
+        index: 1,
       },
     ];
     const newStorage = JSON.stringify(defaultItem);
@@ -40,11 +40,15 @@ window.onload = reload();
 const task = document.getElementById('add-item');
 const addNewBtn = document.getElementById('add-new-btn');
 addNewBtn.addEventListener('click', () => {
-  listArr.push(addNew(task.value, listArr.length));
-  const newStorage = JSON.stringify(listArr);
-  localStorage.setItem('toDoList', newStorage);
-  task.value = '';
-  reload();
+  if (task.value.length > 0) {
+    listArr.push(addNew(task.value, listArr.length + 1));
+    const newStorage = JSON.stringify(listArr);
+    localStorage.setItem('toDoList', newStorage);
+    task.value = '';
+    reload();
+  } else {
+    alert('Tasks must contain text.\nTry typing something into the "Add to your list..." input');
+  }
 });
 
 const clrBtn = document.getElementById('clear-all');
