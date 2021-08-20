@@ -13,6 +13,8 @@ export default function genHTML(list, arr) {
     checkbox.type = 'checkbox';
     checkbox.addEventListener('change', () => {
       checkComplete(arr);
+      list.innerHTML = '';
+      genHTML(list, arr);
     });
     checkbox.id = `checkbox-${i}`;
     checkbox.classList.add('checkbox');
@@ -27,15 +29,14 @@ export default function genHTML(list, arr) {
     itemIcon.addEventListener('click', () => {
       if (itemIcon.classList.contains('red')) {
         remove(i, arr);
-        arr.forEach(item => {
+        arr.forEach((item) => {
           if (item.index > i) {
             item.index -= 1;
-          };
+          }
         });
         localStorage.setItem('toDoList', JSON.stringify(arr));
         list.innerHTML = '';
         genHTML(list, arr);
-        console.log('clicked on the button');
       }
     });
 

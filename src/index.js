@@ -16,9 +16,9 @@ const reload = () => {
   } else {
     const defaultItem = [
       {
-      description: 'Add your first task',
-      completed: false,
-      index: 0,
+        description: 'Add your first task',
+        completed: false,
+        index: 0,
       },
     ];
     const newStorage = JSON.stringify(defaultItem);
@@ -52,10 +52,10 @@ clrBtn.addEventListener('click', () => {
   for (let i = 0; i < listArr.length; i += 1) {
     if (listArr[i].completed) {
       listArr.splice(i, 1);
-      listArr.forEach(task => {
+      listArr.forEach((task) => {
         if (task.index > i) {
           task.index -= 1;
-        };
+        }
       });
       i -= 1;
     }
