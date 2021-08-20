@@ -8,14 +8,15 @@
 - CSS
 - JS
 
+## Live Demo
+[Live Demo](https://mmatongo.github.io/to-do-list/dist/index.html/)
+
 ## Getting Started
 
 To get started locally follow these simple example steps.
 - Fork and clone the repo to your computer using `git clone https://github.com/rpire/to-do-list.git` in the terminal or command prompt.
-- Create a new feature branch using `git checkout -b feature-name`.
-- Add an index.html and index.css file from your text editor and make the necessary modifications.
-- Push the branch to github using `git push`
-- Create a descriptive pull request detailing what your new feature is
+- Make sure to `git checkout desired-branch`.
+- Go to the `dist` folder and open `index.html` to see the project in your browser, or just run the Live Demo with the link above.
 
 ## Author
 
