@@ -9,7 +9,7 @@
 - JS
 
 ## Live Demo
-[Live Demo](https://mmatongo.github.io/to-do-list/dist/index.html/)
+[Live Demo](https://rpire.github.io/to-do-list/dist/index.html/)
 
 ## Getting Started
 
