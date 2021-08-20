@@ -46,3 +46,20 @@ addNewBtn.addEventListener('click', () => {
   task.value = '';
   reload();
 });
+
+const clrBtn = document.getElementById('clear-all');
+clrBtn.addEventListener('click', () => {
+  for (let i = 0; i < listArr.length; i += 1) {
+    if (listArr[i].completed) {
+      listArr.splice(i, 1);
+      listArr.forEach(task => {
+        if (task.index > i) {
+          task.index -= 1;
+        };
+      });
+      i -= 1;
+    }
+  }
+  localStorage.setItem('toDoList', JSON.stringify(listArr));
+  reload();
+});
