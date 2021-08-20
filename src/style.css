@@ -99,8 +99,8 @@ i {
 }
 
 label {
-  width: 40%;
-  height: 16px;
+  min-width: 75px;
+  min-height: 16px;
 }
 
 label:focus {
