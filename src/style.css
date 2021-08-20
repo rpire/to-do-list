@@ -89,9 +89,22 @@ i {
   margin-right: 0;
 }
 
+.bisque-bkg {
+  background-color: bisque;
+}
+
 .checkbox {
   margin-right: 15px;
   margin-bottom: 0;
+}
+
+label {
+  min-width: 75px;
+  min-height: 16px;
+}
+
+label:focus {
+  outline: none;
 }
 
 .item-icon {
@@ -100,6 +113,14 @@ i {
 
 .item-icon:hover {
   color: black;
+}
+
+.red {
+  color: red;
+}
+
+.red:hover {
+  color: brown;
 }
 
 .list-foot {
