@@ -1,4 +1,5 @@
 import checkComplete from './check_complete';
+import remove from './remove';
 
 export default function genHTML(list, arr) {
   for (let i = 0; i < arr.length; i += 1) {
@@ -7,6 +8,7 @@ export default function genHTML(list, arr) {
     const checkbox = document.createElement('input');
     const desc = document.createElement('label');
     const itemIcon = document.createElement('i');
+
     descCont.classList.add('description-container');
     checkbox.type = 'checkbox';
     checkbox.addEventListener('change', () => {
@@ -21,6 +23,43 @@ export default function genHTML(list, arr) {
       desc.classList.add('done');
     }
     itemIcon.classList.add('fas', 'fa-ellipsis-v', 'item-icon');
+
+    itemIcon.addEventListener('click', () => {
+      if (itemIcon.classList.contains('red')) {
+        remove(i, arr);
+        arr.forEach(item => {
+          if (item.index > i) {
+            item.index -= 1;
+          };
+        });
+        localStorage.setItem('toDoList', JSON.stringify(arr));
+        list.innerHTML = '';
+        genHTML(list, arr);
+        console.log('clicked on the button');
+      }
+    });
+
+    desc.addEventListener('click', () => {
+      desc.setAttribute('contenteditable', 'true');
+    });
+    desc.addEventListener('click', (e) => {
+      e.preventDefault();
+    }, false);
+    desc.addEventListener('focus', () => {
+      desc.parentElement.parentElement.classList.add('bisque-bkg');
+      desc.parentElement.nextElementSibling.classList.add('red');
+      desc.parentElement.nextElementSibling.classList.replace('fa-ellipsis-v', 'fa-trash-alt');
+    });
+    desc.addEventListener('blur', () => {
+      arr[i].description = desc.innerHTML;
+      localStorage.setItem('toDoList', JSON.stringify(arr));
+      setTimeout(() => {
+        desc.parentElement.parentElement.classList.remove('bisque-bkg');
+        desc.parentElement.nextElementSibling.classList.remove('red');
+        desc.parentElement.nextElementSibling.classList.replace('fa-trash-alt', 'fa-ellipsis-v');
+        desc.setAttribute('contenteditable', 'false');
+      }, 150);
+    });
 
     descCont.appendChild(checkbox);
     descCont.appendChild(desc);
